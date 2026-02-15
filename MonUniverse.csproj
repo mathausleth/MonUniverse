@@ -1,0 +1,84 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows10.0.19041.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="MonUniverseFunction\Notifications\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Data.Sqlite" Version="10.0.2" />
+    <PackageReference Include="Microsoft.Toolkit.Uwp.Notifications" Version="7.1.3" />
+    <PackageReference Include="System.ServiceProcess.ServiceController" Version="10.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Couleurs">
+      <HintPath>..\..\source\repos\MonUniverseST\Couleurs.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceGenerique">
+      <HintPath>ServiceGenerique.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="MonUniverseObserver\ForServiceGenerique\MonUniverseUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="MonUniverseObserver\ForService\MonUniverseUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="MonUniverseUserInteraction\ButtonsClick\MonUniverseUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="MonUniverseUserInteraction\StartClick\MonUniverseUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="MonUniverseUserInterface\BaseUI\MonUniverseUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="MonUniverseUserInterface\Collections\MonUniverseUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="MonUniverseUserInterface\CompleteUI\LeftPage\MonUniverseUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="MonUniverseUserInterface\CompleteUI\MenuBar\MonUniverseUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="MonUniverseUserInterface\CompleteUI\RightPage\MonUniverseUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="MonUniverseUserInterface\CompleteUI\StatusBar\MonUniverseUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="MonUniverseRessources\ButtonView.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="MonUniverseRessources\folder.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>
